@@ -21,7 +21,7 @@ export function validate(input) {
   )
     errors.animal_weight = 'El peso del animal debe ser entre 1 y 1000 Kg';
 
-  if (!input.paddock_name)
+  if (!input.paddock_name || input.paddock_name.trim() === '')
     errors.paddock_name = 'El nombre de potrero no puede quedar en blanco';
   else if (!/^[A-Za-z]+$/g.test(input.paddock_name))
     errors.paddock_name = 'Sólo se permiten letras';
